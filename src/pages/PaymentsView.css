@@ -1,0 +1,82 @@
+.finance-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.finance-card {
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.fc-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+}
+
+.gross-revenue .fc-icon {
+  background: linear-gradient(135deg, #3B82F6, #2563EB);
+}
+
+.commission-revenue .fc-icon {
+  background: linear-gradient(135deg, #10B981, #059669);
+  box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);
+}
+
+.pending-payouts .fc-icon {
+  background: linear-gradient(135deg, #F59E0B, #D97706);
+}
+
+.fc-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.fc-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+
+.fc-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.fc-trend {
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-top: 0.25rem;
+  font-weight: 500;
+}
+
+.hover-underline:hover {
+  text-decoration: underline;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .finance-grid {
+    grid-template-columns: 1fr;
+  }
+}

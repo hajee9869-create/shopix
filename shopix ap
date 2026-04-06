@@ -1,0 +1,17 @@
+# Supabase Backend Integration Walkthrough
+
+## Changes Made
+- **Database Schema**: Successfully designed and executed the entire database schema via the Supabase MCP.
+  - Created tables: `profiles`, `stores`, `categories`, `products`, `orders`, `order_items`, `store_followers`.
+- **Initial Data**: Successfully populated the backend with the required mock/original data to support the UI views.
+- **Frontend Configuration**: Hooked up [src/lib/supabase.js](file:///c:/Users/IC%20Traders/jani250/src/lib/supabase.js) and [.env.local](file:///c:/Users/IC%20Traders/jani250/.env.local) to point to your live Supabase database instance.
+- **Component Data Fetching**: 
+  - **[UserProfile.jsx](file:///c:/Users/IC%20Traders/jani250/src/pages/user/UserProfile.jsx)**: Now dynamically queries `orders`, `order_items`, and `store_followers` directly from Supabase to show real history.
+  - **[StoreProfile.jsx](file:///c:/Users/IC%20Traders/jani250/src/pages/user/StoreProfile.jsx)**: Now queries `stores` and `products` based on the store ID parameter, gracefully handling empty states.
+  - **[ProductsView.jsx](file:///c:/Users/IC%20Traders/jani250/src/pages/ProductsView.jsx)** (Admin): Now fetches the complete live inventory, including related tables (like `category` and `store_name`) via Supabase foreign key select queries.
+  - **[UsersView.jsx](file:///c:/Users/IC%20Traders/jani250/src/pages/UsersView.jsx)**, **[OrdersView.jsx](file:///c:/Users/IC%20Traders/jani250/src/pages/OrdersView.jsx)**, **[SellersView.jsx](file:///c:/Users/IC%20Traders/jani250/src/pages/SellersView.jsx)**, and **[Dashboard.jsx](file:///c:/Users/IC%20Traders/jani250/src/pages/Dashboard.jsx)** (Admin): All now utilize real-time live data directly from the Supabase `profiles`, `orders`, and `stores` tables.
+
+## Validation Results
+- The SQL queries executed without error and tables were successfully established.
+- The React components have been upgraded with `useEffect` blocks that fetch the data correctly utilizing `@supabase/supabase-js`.
+- The frontend is now officially interacting in real-time with your deployed Supabase instance!

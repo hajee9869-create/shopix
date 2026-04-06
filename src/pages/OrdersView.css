@@ -1,0 +1,46 @@
+.order-stats-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.25rem 2rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.stat-pill {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  align-items: center;
+  flex: 1;
+}
+
+.stat-pill:not(:last-child) {
+  border-right: 1px solid var(--border-color);
+}
+
+.pill-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.pill-val {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.badge-primary {
+  background-color: rgba(79, 70, 229, 0.1);
+  color: var(--primary);
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.font-medium {
+  font-weight: 500;
+}
